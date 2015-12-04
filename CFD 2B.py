@@ -37,5 +37,5 @@ udum = zeros(num_pos)     #create dummy array for solution of differential equat
 for i in range (num_timesteps):
     udum = u.copy()
     for k in range (1,num_pos):
-        u[k] = udum[k] - c * (timestep/x_dis) * (udum[k]-udum[k-1])  #FD in time , #BD in space
+        u[k] = udum[k] - udum[k] * (timestep/x_dis) * (udum[k]-udum[k-1])  #FD in time , #BD in space
 pyplot.plot (linspace(0,xlen,num_pos),u) 
